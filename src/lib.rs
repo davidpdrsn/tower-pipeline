@@ -1,7 +1,7 @@
 //! A [Tower] [`Service`] combinator that "pipelines" two services.
 //!
 //! A [`Pipeline`] is a [`Service`] consisting of two other [`Service`]s where the response of the
-//! first is the request of the second. This is analagous to [function composition] but for
+//! first is the request of the second. This is analogous to [function composition] but for
 //! services.
 //!
 //! ```

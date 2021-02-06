@@ -2,8 +2,8 @@
 
 A [Tower] [`Service`] combinator that "pipelines" two services.
 
-A [`Pipeline`] is a [`Service`] consisting of two other [`Service`]s where the response of the
-first is the request of the second. This is analagous to [function composition] but for
+A `Pipeline` is a [`Service`] consisting of two other [`Service`]s where the response of the
+first is the request of the second. This is analogous to [function composition] but for
 services.
 
 ```rust
@@ -30,7 +30,7 @@ assert_eq!(result, 8);
 ```
 
 [Tower]: https://crates.io/crates/tower
-[`Service`]: tower_service::Service
+[`Service`]: https://docs.rs/tower-service/0.3.1/tower_service/trait.Service.html
 [function composition]: https://en.wikipedia.org/wiki/Function_composition
 
 License: MIT
