@@ -1,0 +1,36 @@
+# tower-pipeline
+
+A [Tower] [`Service`] combinator that "pipelines" two services.
+
+A [`Pipeline`] is a [`Service`] consisting of two other [`Service`]s where the response of the
+first is the request of the second. This is analagous to [function composition] but for
+services.
+
+```rust
+use tower_pipeline::PipelineExt;
+use tower::{service_fn, BoxError, ServiceExt};
+
+// service that returns the length of a string
+let length_svc = service_fn(|input: &'static str| async move {
+    Ok::<_, BoxError>(input.len())
+});
+
+// service that doubles its input
+let double_svc = service_fn(|input: usize| async move {
+    Ok::<_, BoxError>(input * 2)
+});
+
+// combine our two services
+let combined = length_svc.pipeline(double_svc);
+
+// call the service
+let result = combined.oneshot("rust").await.unwrap();
+
+assert_eq!(result, 8);
+```
+
+[Tower]: https://crates.io/crates/tower
+[`Service`]: tower_service::Service
+[function composition]: https://en.wikipedia.org/wiki/Function_composition
+
+License: MIT
