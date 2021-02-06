@@ -1,5 +1,10 @@
 # tower-pipeline
 
+[![Crates.io](https://img.shields.io/crates/v/tower-pipeline.svg)](https://crates.io/crates/tower-pipeline)
+[![Docs](https://docs.rs/tower-pipeline/badge.svg)](https://docs.rs/tower-pipeline)
+[![dependency status](https://deps.rs/repo/github/davidpdrsn/tower-pipeline/status.svg)](https://deps.rs/repo/github/davidpdrsn/tower-pipeline)
+[![Build status](https://github.com/davidpdrsn/tower-pipeline/workflows/CI/badge.svg)](https://github.com/davidpdrsn/tower-pipeline/actions)
+
 A [Tower] [`Service`] combinator that "pipelines" two services.
 
 A `Pipeline` is a [`Service`] consisting of two other [`Service`]s where the response of the
